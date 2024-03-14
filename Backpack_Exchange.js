@@ -1,8 +1,10 @@
 
 /////// Setting here ///////
-const number = 1000; // total number buy/sell
-const minSleep = 10; // 10s
-const maxSleep = 30; // 30s
+const tradeType = 0; // 0: No limit, 1: Stop at low balance, 2: Stop after N trades
+const stopUsdc = 100; // Stop trading if balance is below this amount (for tradeType 1)
+const stopTradeAmount = 100; // Stop after this many trades (for tradeType 2)
+const minSleep = 10; // Minimum sleep time in seconds
+const maxSleep = 30; // Maximum sleep time in seconds
 ///////////////////////////
 
 let count = 0;
@@ -44,7 +46,7 @@ const Start = async () => {
     
     count++;
 
-    if (count < number) {
+    if (count < stopTradeAmount) {
         console.clear()
         await Start();
     }
