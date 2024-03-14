@@ -7,7 +7,7 @@ const minSleep = 10; // Minimum sleep time in seconds
 const maxSleep = 30; // Maximum sleep time in seconds
 ///////////////////////////
 
-let count = 0;
+let counter = 0;
 let totalBuy = 0;
 let totalSell = 0;
 clear()
@@ -44,9 +44,9 @@ const Start = async () => {
     console.log(` - Waiting: ${randomNumber}s ...`);
     await new Promise(resolve => setTimeout(resolve, randomNumber * 1000));
     
-    count++;
+    counter++;
 
-    if (count < stopTradeAmount) {
+    if (counter < stopTradeAmount) {
         console.clear()
         await Start();
     }
