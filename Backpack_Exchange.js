@@ -2,7 +2,7 @@
 /////// Setting here ///////
 const tradeType = 0; // 0: No limit, 1: Stop at low balance, 2: Stop after N trades
 const stopUsdc = 100; // Stop trading if balance is below this amount (for tradeType 1)
-const stopTradeAmount = 100; // Stop after this many trades (for tradeType 2)
+const stopTradeAmount = 20; // Stop after this many trades (for tradeType 2)
 const minSleep = 10; // Minimum sleep time in seconds
 const maxSleep = 30; // Maximum sleep time in seconds
 ///////////////////////////
