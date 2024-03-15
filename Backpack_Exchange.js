@@ -40,9 +40,6 @@ const Start = async () => {
         totalSell++
     }
 
-    // Log the completion of a trade operation
-    console.log(`Trade operation completed. Total: Buy: ${totalBuy} | Sell: ${totalSell}`);
-
     const randomNumber = Math.floor(Math.random() * (maxSleep - minSleep + 1)) + minSleep; 
     console.log(` - Waiting: ${randomNumber}s ...`);
     await new Promise(resolve => setTimeout(resolve, randomNumber * 1000));
