@@ -40,15 +40,22 @@ const Start = async () => {
         totalSell++
     }
 
+    // Log the completion of a trade operation
+    console.log(`Trade operation completed. Total: Buy: ${totalBuy} | Sell: ${totalSell}`);
+
     const randomNumber = Math.floor(Math.random() * (maxSleep - minSleep + 1)) + minSleep; 
     console.log(` - Waiting: ${randomNumber}s ...`);
     await new Promise(resolve => setTimeout(resolve, randomNumber * 1000));
     
     counter++;
 
+    // Log to indicate moving to the next operation or ending session
     if (counter < stopTradeAmount) {
-        console.clear()
+        console.clear();
+        console.log("Proceeding to the next trade operation...");
         await Start();
+    } else {
+        console.log("All trade operations completed.");
     }
 }
 
